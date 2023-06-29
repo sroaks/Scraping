@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -6,7 +8,10 @@ from bs4 import BeautifulSoup
 import time
 
 options = webdriver.ChromeOptions()
-options.add_argument("--start-maximized")
 
-driver_path = "C:\\Program Files (x86)\\Google\\Chrome\\Application\chromedriver.exe"
+driver_path = 'C:\\Users\\GonzaloRS\\Desktop\\chromedriver.exe'
+
+driver = webdriver.Chrome(driver_path, options=options)
+
+driver.get("https://mercadolibre.com.pe")
 
